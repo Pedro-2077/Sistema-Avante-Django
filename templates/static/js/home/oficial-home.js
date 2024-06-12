@@ -7,8 +7,8 @@ function toggleDropdown(event, dropdownId) {
 document.addEventListener("DOMContentLoaded", function() {
     // Exemplo de dados do usuário, que seriam carregados dinamicamente
     var userProfile = {
-        name: "Samuel",
-        picture: "D:/DocumentosHD/PROJETO WEB3/img/perfil.jpg" // Caminho da imagem
+        name: "",
+        picture: "" // Caminho da imagem
     };
 
     document.getElementById("profile-name").textContent = userProfile.name;
