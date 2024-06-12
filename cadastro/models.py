@@ -70,17 +70,6 @@ class Atividade(models.Model):
     def __str__(self):
         return f'{self.nome_atividade}'
 
-#TODO ADICIONA DEPOIS SLUG ATIVIDADE
-"""    def save(self, *args, **kwargs):
-        # Gera o slug baseado no nome da atividade
-        self.slug = slugify(self.nome_atividade)
-
-        # Se o slug já existe, adiciona o ID da atividade para garantir unicidade
-        if Atividade.objects.filter(slug=self.slug).exists():
-            self.slug = f"{self.slug}-{self.id}"
-
-        super().save(*args, **kwargs)"""
-
 
 class Servico(models.Model):
     nome_servico = models.CharField(max_length=30, verbose_name='Nome do Servico', blank=False, null=False)

@@ -19,8 +19,10 @@
                 <div class="box-header">
                     <h3>Usuários Interno</h3>
                     <div class="search-container">
-                        <input type="text" id="search-input" placeholder="Localizar...">
-                        <button type="button" id="search-button"><i class="fas fa-search"></i></button>
+                      <form method="GET" action="{% url 'lista_usuario_interno' %}">
+                        <input type="text" id="search-input" placeholder="Pesquisar..." name="pesquisa" value="{{ request.GET.pesquisa }}">
+                        <button type="submit" id="search-button"><i class="fas fa-search"></i></button>
+                      </form>
                     </div>
 
                 </div>
@@ -42,7 +44,7 @@
                         <td>
                             <button class="btn-editar" onclick="openExternalModal('{% url 'update_usuario_interno' user.id%}', 'modal-content-large')"><i class="fas fa-edit"></i> Editar</button>
                             <button class="btn-visualizar" onclick="openExternalModal('{% url 'visualizar_usuario_interno' user.id %}', 'modal-content-small')"><i class="fas fa-eye"></i> Visualizar</button>
-                            <button class="btn-deletar" onclick="openModal()"><i class="fas fa-trash-alt"></i> Deletar</button>
+                            <button class="btn-deletar" onclick="openModal(this)" data-id="{{ user.id }}"><i class="fas fa-trash-alt"></i> Deletar</button>
                         </td>
                     </tr>
                     {% endif %}
@@ -55,16 +57,12 @@
 {% endblock content_space %}
 
 
-
-
-
 {% block modals %}
-<!-- Modal do Delete -->
 <div id="deleteModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
     <h2>Tem certeza que deseja deletar este item?</h2>
-    <button class="modal-btn modal-btn-confirm" onclick="confirmDeletion()">Deletar</button>
+    <button id="confirmDeleteButton" class="modal-btn modal-btn-confirm" onclick="confirmDeletion()">Deletar</button>
     <button class="modal-btn modal-btn-cancel" onclick="closeModal()">Cancelar</button>
   </div>
 </div>
@@ -80,7 +78,6 @@
 <!-- Notificação -->
 <div id="notification" class="notification">Item deletado com sucesso!</div>
 {% endblock modals %}
-
 
 
 {% block script %}

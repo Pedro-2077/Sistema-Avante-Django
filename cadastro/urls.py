@@ -42,6 +42,7 @@ urlpatterns = [
 
     path('deletar_aula/<int:id>/', deletar_aula, name='deletar_aula'),
     path('deletar_servico/<int:id>/', deletar_servico, name='deletar_servico'),
-    path('deletar/<slug:slug>/', deletar_cliente, name='deletarCli'),
+    path('deletar_usuario_interno/<int:id>/', deletar_usuario_interno, name='deletar_usuario_interno'),
+    path('deletar_usuario_externo/<int:id>/', deletar_usuario_externo, name='deletar_usuario_externo'),
 ]
 

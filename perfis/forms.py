@@ -51,6 +51,6 @@ class PasswordChangeFormTemplate(forms.PasswordChangeForm):
             self.fields[field].widget.attrs.update({'class': 'form-control'})
 
         for field_name in ['new_password1', 'new_password2']:
-            self.fields[field_name].help_text = None
+            self.fields[field_name].help_text = ''
 
         fields = ['new_password1', 'new_password2']

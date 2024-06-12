@@ -11,13 +11,14 @@
         <h1>Sistema de Gerenciamento Avante</h1>
         <div class="calendar">
             <h2>Calendário</h2>
-            <div id="current-date">{{ current_date|date:"l, d F Y" }}</div>
+            <div id="current-date"></div>
         </div>
         <div class="box-container">
             <div class="box">
                 <h1>Aulas do Dia</h1>
                 <div class="table-container">
                     <table id="tabela-aulas">
+                        <thead>
                             <tr>
                                 <th>Nome</th>
                                 <th>Dia</th>
@@ -25,23 +26,10 @@
                                 <th>Responsável</th>
                                 <th>Ação</th>
                             </tr>
-
-                            {% for aula in aulaList %}
-                            <tr>
-                                <td>{{ aula.nome_atividade }}</td>
-                                <td>{{ aula.dia_atividade.all.0.dia_semana }}</td> <!-- Assumindo que uma aula pode ter mais de um dia -->
-                                <td>{{ aula.hora_atividade }}</td>
-                                <td>{{ aula.responsavel.get_full_name }}</td>
-                                <td>
-                                    <button class="btn-presenca" onclick="abrirModal('presencaModal', 'presencaAulaModal.html')">
-                                        <i class="fas fa-check"></i> Presença
-                                    </button>
-                                    <button class="btn-visualizar" onclick="abrirModal('visualizarModal', 'visualizarAulaHomeModal.html')">
-                                        <i class="fas fa-eye"></i> Visualizar
-                                    </button>
-                                </td>
-                            </tr>
-                            {% endfor %}
+                        </thead>
+                        <tbody>
+                            <!-- As aulas serão inseridas aqui  -->
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -49,37 +37,44 @@
                 <h1>Serviços do Dia</h1>
                 <div class="table-container">
                     <table id="tabela-servicos">
-                        <tr>
-                            <th>Nome</th>
-                            <th>Dia</th>
-                            <th>Horário</th>
-                            <th>Responsável</th>
-                            <th>Ação</th>
-                        </tr>
-
-                        {% for servico in servicoList %}
-                            {% if servico%}
+                        <thead>
                             <tr>
-                                <td>{{ servico.nome_servico }}</td>
-                                <td>{{ servico.dia_atividade }}</td>
-                                <td>{{ servico.hora_inicio }} - {{ servico.hora_fim_atividade }}</td>
-                                <td>{{ servico.responsavel.get_full_name }}</td>
-                                <td>
-                                    <button class="btn-presenca" onclick="abrirModal('presencaModal', 'presencaServicoModal.html')">
-                                        <i class="fas fa-check"></i> Presença
-                                    </button>
-                                    <button class="btn-visualizar" onclick="abrirModal('visualizarModal', 'visualizarServicoHomeModal.html')">
-                                        <i class="fas fa-eye"></i> Visualizar
-                                    </button>
-                                </td>
+                                <th>Nome</th>
+                                <th>Dia</th>
+                                <th>Horário</th>
+                                <th>Responsável</th>
+                                <th>Ação</th>
                             </tr>
-                            {% endif %}
-                        {% endfor %}
+                        </thead>
+                        <tbody>
+                            <!-- Os serviços serão inseridos aqui  -->
+                        </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<div class="profile">
+    <img src="D:/DocumentosHD/PROJETO WEB3/img/perfil.jpg" alt="Profile Picture" id="profile-picture">
+    <a href="perfil.html" id="profile-name">Usuário</a>
+</div>
+
+<!-- Modais -->
+<div id="visualizarModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="fecharModal('visualizarModal')">&times;</span>
+        <iframe src="" id="visualizarIframe"></iframe>
+    </div>
+</div>
+
+<div id="presencaModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="fecharModal('presencaModal')">&times;</span>
+        <iframe src="" id="presencaIframe"></iframe>
+    </div>
+</div>
 {% endblock content_space %}
 
 {% block modals %}

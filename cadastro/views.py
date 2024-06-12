@@ -302,17 +302,34 @@ def visualizar_usuario_interno(request, id):
 
 
 # lista---------------------------------------------------------------
-@cache_page(60)
 @login_required(login_url='login')
 def lista_usuario_interno(request):
-    internoList = Users.objects.all()
+    pesquisa = request.GET.get('pesquisa')
+
+    if pesquisa:
+        internoList = Users.objects.all()
+        internoList = internoList.filter(first_name__icontains=pesquisa)
+
+    else:
+        internoList = Users.objects.all()
+        return render(request, 'lista/listagemUsuariosInternos.html', {'internoList': internoList})
+
     return render(request, 'lista/listagemUsuariosInternos.html', {'internoList': internoList})
 
 
-@cache_page(60)
 @login_required(login_url='login')
 def lista_usuario_externo(request):
-    externoList = Usuario_Externo.objects.all()
+    pesquisa = request.GET.get('pesquisa')
+
+    if pesquisa:
+        externoList = Usuario_Externo.objects.all()
+        externoList = externoList.filter(nome__icontains=pesquisa)
+
+
+    else:
+        externoList = Usuario_Externo.objects.all()
+        return render(request, 'lista/listagemUsuariosExternos.html', {'externoList': externoList})
+
     return render(request, 'lista/listagemUsuariosExternos.html', {'externoList': externoList})
 
 
@@ -385,5 +402,14 @@ def deletar_servico(request, id):
     return JsonResponse({'message': 'Serviço deletado com sucesso!'})
 
 
+def deletar_usuario_interno(request, id):
+    usuario = get_object_or_404(Users, id=id)
+    usuario.delete()
+    return JsonResponse({'message': 'Usuarario Deletado'})
+
+def deletar_usuario_externo(request, id):
+    usuario = get_object_or_404(Usuario_Externo, id=id)
+    usuario.delete()
+    return redirect(reverse('vizualizar_usuario_externo'))
 # ---------------------------------------------------------------------
 
