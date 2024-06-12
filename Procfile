@@ -1,1 +1,1 @@
-web: gunicorn gerenciador.wsdi --log-file
+web: gunicorn gerenciador.wsdi --log-file -
