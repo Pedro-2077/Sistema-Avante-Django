@@ -10,7 +10,7 @@ O Sistema Avante oferece as seguintes funcionalidades:
 2. **Tecnologias Utilizadas**:
    - **Python**
    - **Django**
-   - **sqlite**
+   - **Sqlite**
    - **HTML**
    - **CSS**
    - **Bootstrap**
