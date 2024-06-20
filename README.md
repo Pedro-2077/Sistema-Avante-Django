@@ -38,6 +38,4 @@ Você também pode conferir o perfil do Pedro Vinicius no GitHub: [Pedro-2077](h
 ²: [Repositório do Sistema Avante](https://github.com/Pedro-2077/Sistema-Avante-Django)
 ³: [Projeto pessoal de gestão escolar no GitHub](https://github.com/Antonio-Neves/Gestao-Escolar)
 
-(1) Pedro-2077 (Pedro Vinicius ) · GitHub. https://github.com/Pedro-2077/.
-(2) GitHub - Pedro-2077/Pedro-2077. https://github.com/Pedro-2077/Pedro-2077.
-(3) GitHub - Antonio-Neves/Gestao-Escolar: Sistema completo de gestão .... https://github.com/Antonio-Neves/Gestao-Escolar.
+
