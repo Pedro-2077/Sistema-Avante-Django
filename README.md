@@ -1,4 +1,4 @@
-#- Sistema Avante (Django)
+# README - Sistema Avante (Django)
 
 ## Descrição
 O **Sistema Avante** é um projeto desenvolvido por Pedro Vinicius, estudante de Sistemas de Informação na UNILASALLE. O sistema está focado na área de programação e utiliza a estrutura do framework **Django**.
@@ -10,7 +10,7 @@ O Sistema Avante oferece as seguintes funcionalidades:
 2. **Tecnologias Utilizadas**:
    - **Python**
    - **Django**
-   - **PostgreSQL**
+   - **sqlite**
    - **HTML**
    - **CSS**
    - **Bootstrap**
