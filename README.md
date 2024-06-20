@@ -34,8 +34,6 @@ Para entrar em contato com o autor, envie um e-mail para pedrovn2077@gmail.com.
 
 Você também pode conferir o perfil do Pedro Vinicius no GitHub: [Pedro-2077](https://github.com/Pedro-2077/). 😊
 
-¹: [Perfil do Pedro Vinicius no GitHub](https://github.com/Pedro-2077/)
-²: [Repositório do Sistema Avante](https://github.com/Pedro-2077/Sistema-Avante-Django)
-³: [Projeto pessoal de gestão escolar no GitHub](https://github.com/Antonio-Neves/Gestao-Escolar)
+
 
 
