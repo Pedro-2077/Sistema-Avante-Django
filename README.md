@@ -8,12 +8,10 @@ Bem-vindo ao Sistema Avante! Este projeto Django é projetado para gerenciar o c
 <img src="https://github.com/Pedro-2077/Sistema_Jato/assets/139086553/7b67fc06-237b-4620-b596-78a44af57183" width="1000px"> 
 </div>
 
-<br>
 <div align="center">
 <img src="https://github.com/Pedro-2077/Sistema_Jato/assets/139086553/34c635e7-908b-4c72-a751-d1f33bbca13e" width="1000px"> 
 </div>
 
-<br>
 <div align="center">
 <img src="https://github.com/Pedro-2077/Sistema_Jato/assets/139086553/c80823ba-c089-4736-995a-6861c00d757f" width="1000px"> 
 </div>
